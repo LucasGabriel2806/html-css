@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 * {
     margin: 0;
     padding: 0;
@@ -8,75 +6,82 @@
 }
 
 body {
-    background-color: rgb(224, 213, 213);
+    background-color: rgb(211, 211, 211);
 }
 
 header {
-    background-color: rgb(129, 120, 120);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: gray;
     color: white;
-    padding: 8px;
-    margin-bottom: 8px;
-}
-
-header h1 {
-    text-shadow: 1px 1px black;
-    display: inline;
-}
-
-header ul {
-    display: inline;
-}
-
-header ul li {
-    list-style-type: none;
-    display: inline-block;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: black;
-}
-
-header ul li:hover {
-    background-color: white;
-}
-
-header ul li a {
-    color: white;
-    text-decoration: none;
     
+    padding: 10px;
 }
 
-header ul li a:hover {
-    color: black;
+header > h1 {
+    text-shadow: 1px 1px black;
 }
 
-header nav {
-    width: 90%;
-    display: inline-flex;
-    justify-content: end;
+nav {
+    display: flex;
+    /** Fazendo o nav ocupar a largura máxima possível no header */
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     flex-wrap: wrap;
 }
 
-section {
-    background-color: white;
-    width: 98%;
+nav > ul {
+    position: absolute;
+    right: 0;
+}
+
+/** Tirando os bullets da lista */
+nav > ul > li {
+    list-style-type: none;
+    display: inline;
+}
+
+nav > ul > li > a {
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
     padding: 10px;
-    margin: auto;
+    transition: background-color .5s ease;
+}
+
+nav > ul > li > a:hover {
+    color: black;
+    background-color: #fff;
+}
+
+main {
+    padding: 10px;
+}
+
+section {
+    padding: 10px;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.199);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.300);
+}
+
+section > h2 {
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 768px) {
-    header h1 {
-        display: block;
+
+    header > h1 {
         text-align: center;
     }
 
-    header nav, header ul, header ul li, header ul li a {
+    /** Fazendo os links ocuparem mais espaço e terem quebra de linha */
+    nav > ul > li > a {
         display: block;
-        width: 100%;
         text-align: center;
-        margin-bottom: 10px;
     }
+    /** Preciso trocar por fd col: */
 }
-
-/*8:53 */
